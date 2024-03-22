@@ -23,13 +23,19 @@ body {
 .image-container {
   display: flex;
   flex-wrap: wrap;
+  margin-left: 300px;
+
   justify-content: center;
+  align-items: center;
 }
 
 .image-container img {
-  justify-content: space-around; 
-  margin: 0 100px;
+  margin-left: 150px;
+  margin-right: 200px;
+
+
 }
+
 main {
   max-width: 80vw;
   margin: 0 auto;
@@ -56,7 +62,6 @@ main article {
   flex-direction: column;
   align-items: start;
 }
-
 
 
 section h1,
