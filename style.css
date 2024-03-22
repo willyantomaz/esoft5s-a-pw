@@ -48,6 +48,8 @@ main article {
   align-items: center;
 }
 
+
+
 section h1,
 section h2,
 section h3 {
@@ -63,7 +65,7 @@ article h3 {
 }
 
 p {
-  margin-bottom: 16px;
+  gap: 20px;
 }
 
 ul li {
@@ -114,7 +116,16 @@ nav a:hover {
 
 /* Seções */
 
+
+
+#curiosidades {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
 #curiosidades li::marker {
+ 
   content: '🔍';
 }
 
@@ -153,10 +164,11 @@ a[target='_blank']:hover {
 /* Footer */
 
 footer {
+  display: flex;
   background-color: #343a40;
   color: #fff;
   padding: 20px;
-  text-align: center;
+  align-items: center;
   bottom: 0;
 }
 
