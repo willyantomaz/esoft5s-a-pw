@@ -171,6 +171,10 @@ article {
 }
 
 /* Links */
+a {
+  color:#333;
+  text-decoration: none;
+}
 
 a[target='_blank'] {
   color: #4592c4;
