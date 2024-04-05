@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Página do Pokémon Squirtle</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header id="header">
+      <h1></h1>
+    </header>
+  </body>
+  <main>
+    <section id="info-squirtle" aria-labelledby="info-squirtle-label">
+      <h2 id="info-squirtle-label"></h2>
+      <div>
+        <img
+         
+        />
+      </div>
+    </section>
+  </main>
+
+  <footer aria-label="Rodapé">
+    <p aria-label="Copyright">
+      &copy; 2024 Página do Pokémon Squirtle. Todos os direitos reservados.
+    </p>
+    <p><a href="#header">Voltar para o topo</a></p>
+    <p><a href="mailto:contato@squirtlepage.com">Contato via e-mail</a></p>
+    <p><a href="tel:+5555555555">Telefone: (55) 5555-5555</a></p>
+  </footer>
+
+
+
+<script>
+    const urlParams = new URLSearchParams(location.search);
+    const nome = urlParams.get('name').toLowerCase();
+    document.title = nome;
+
+    const h1 = document.querySelector('h1');
+    h1.textContent = `Pagina do ${nome}`;
+    const h2 = document.querySelector('h2');
+    h2.textContent = `Informações sobre ${nome}`;
+    const img = document.querySelector('img');
+
+    async function funcao () {
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${nome}`);
+        const teste = await response.json();
+        img.src = teste.sprites.front_default
+    }
+
+    //fetch(`https://pokeapi.co/api/v2/pokemon/${nome}`)
+    //    .then(res => 
+    //        res.json()
+    //    .then(data => 
+    //        img.src = data.sprites.front_default
+    //    ))
+
+    funcao()
+</script>
