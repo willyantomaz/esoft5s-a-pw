@@ -29,6 +29,7 @@
     <p><a href="#header">Voltar para o topo</a></p>
     <p><a href="mailto:contato@squirtlepage.com">Contato via e-mail</a></p>
     <p><a href="tel:+5555555555">Telefone: (55) 5555-5555</a></p>
+    <p><a id="visitas" style="color: bisque;"></a></p>
   </footer>
 
 
@@ -56,6 +57,28 @@
         }
 
         ))
+        
+        var data = new Date();
+        data = Intl.DateTimeFormat('pt-BR', {day:"numeric",month:"numeric",year:"numeric",hour:"numeric",minute:"numeric"}).format(data);
+        if(!localStorage.getItem('visitas')){
+          var count = {contador: 1,data: data};
+          localStorage.setItem('visitas',JSON.stringify(count));
+        }else {
+          json = JSON.parse(localStorage.getItem('visitas'))
+          json.contador = count.contador
+          json.data = data
 
+          localStorage.setItem('visitas',JSON.stringify(json))
+          
+        }
+        console.log(count);
+        
+        
+      
+        
+        
+        
+        
+        document.getElementById('visitas').textContent = `Você visitou essa página ${count.contador} vezes. Última visita em ${count.data}`;
 
 </script>
