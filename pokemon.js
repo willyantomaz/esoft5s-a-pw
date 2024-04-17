@@ -30,8 +30,8 @@ function getImagePoke() {
 
                 )
         )
-
-    document.querySelector("img").addEventListener("click", function (event) {
+            // pode coloca só img no lugar do document.querySelector("img").
+    document.querySelector("img").addEventListener("click", function () {
         console.log(count);
         if (count < imagens.length) {
             img.src = imagens[count];
@@ -40,6 +40,10 @@ function getImagePoke() {
             img.src = imagens[0];
             count = 0;
         }
+        /*positio = (position + 1) % imagens.leght
+            img.src = imagens[position]
+        */
+
     },false);
 
 }
@@ -47,7 +51,11 @@ function getImagePoke() {
 
 function updateVisitas() {
     var data = new Date();
-    data = Intl.DateTimeFormat('pt-BR', { day: "numeric", month: "numeric", year: "numeric", hour: "numeric", minute: "numeric" }).format(data);
+    data = Intl.DateTimeFormat('pt-BR', { day: "numeric",
+     month: "numeric",
+      year: "numeric",
+       hour: "numeric",
+        minute: "numeric" }).format(data);
     if (!localStorage.getItem('visitas')) {
         var count = { contador: 1, data: data };
         localStorage.setItem('visitas', JSON.stringify(count));
@@ -61,6 +69,15 @@ function updateVisitas() {
     console.log(count);
 
     document.getElementById('visitas').textContent = `Você visitou essa página ${count.contador} vezes. Última visita em ${count.data}`;
+
+    /*
+    const footer = document.querySelector("footer") pega o primeiro
+    cosnt p = documente.crateElement('p')
+    p.textContent = `Você visitou essa página ${count.contador} vezes. Última visita em ${count.data}`;
+
+    footer.appendChild(p)
+    */ 
+
 }
 updateVisitas();
 
