@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Página Todo List</title>
+    <link rel="stylesheet" href="todo.css" />
+  </head>
+  <body>
+    <header id="header">
+      <h1>Todo List</h1>
+    </header>
+    <main>
+        <form name="formTarefa" onsubmit="salvar(event)">
+            <input type="textarea" name="form"  placeholder="Digite uma Tarefa" />
+            <button type="submit">Enviar</button>
+        </form>
+
+        <div id="tarefas"></div>        
+    </main>
+    <footer aria-label="Rodapé">
+        <p aria-label="Copyright">
+          &copy; 2024 Todo List.
+        </p>
+        <p><a id="visitas" style="color: bisque;"></a></p>
+      </footer>
+  </body>
+</html>
+<script src="form.js"></script>
